@@ -31,17 +31,28 @@ body {
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
     font-weight: 200;
-}
-
-h1 {
     opacity: 0;
-    font-weight: 200;
     animation: fadein 2s 1s forwards;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h1 {
+    font-weight: 200;
+    align-self: flex-start;
+}
+
+img {
+    align-self: flex-start;
+}
+
 .container span.line {
-    animation: line 2s 1s forwards;
-    background-color: var(--highlight-color);
+    animation: line 2s 2s forwards;
+    background-color: var(--gray-color);
     height: 0.1em;
     width: 0.em;
     display: inline-block;
@@ -76,7 +87,6 @@ div.subcontainer {
         margin-top: 32px;
     }
     header {
-        /* position: fixed; */
         margin-bottom: 192px;
     }
     h1 {
