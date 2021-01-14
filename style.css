@@ -46,8 +46,13 @@ h1 {
     align-self: flex-start;
 }
 
-img {
+header img {
     align-self: flex-start;
+    height: 50px;
+}
+
+.container {
+    margin: 20px;
 }
 
 .container span.line {
@@ -69,12 +74,20 @@ div.subcontainer {
     border-bottom: 0px solid var(--gray-color);
 }
 
+footer {
+    margin-top: 10%;
+}
+
 @media(min-width: 600px) {
     body {
         font-weight: 100;
     }
     h1 {
         font-weight: 100;
+    }
+    header img {
+        align-self: flex-start;
+        height: 60px;
     }
     p.filter-name {
         font-weight: 300;
@@ -96,5 +109,9 @@ div.subcontainer {
     p.info,
     p.year {
         font-size: 40px;
+    }
+    p.info:hover {
+        background-color: var(--highlight-color);
+        transition: color 0.5s;
     }
 }
