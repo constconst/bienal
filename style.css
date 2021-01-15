@@ -38,12 +38,13 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 }
 
 h1 {
     font-weight: 200;
     align-self: flex-start;
+    margin-top: 0;
 }
 
 header img {
@@ -84,6 +85,8 @@ footer {
     }
     h1 {
         font-weight: 100;
+        margin-top: 0;
+        padding-top: 0;
     }
     header img {
         align-self: flex-start;
