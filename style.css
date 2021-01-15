@@ -6,6 +6,15 @@
     --highlight-color: #f9868d;
 }
 
+@keyframes colorchange {
+    0% {
+        background-color: var(--highlight-color);
+    }
+    100% {
+        background-color: var(--main-color);
+    }
+}
+
 @keyframes fadein {
     0% {
         opacity: 0;
@@ -26,19 +35,116 @@
     }
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--main-color);
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
     font-weight: 200;
-    opacity: 0;
-    animation: fadein 2s 1s forwards;
+}
+
+div.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+div.banner a {
+    z-index: 2;
+    filter: none;
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: 300;
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.background {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    filter: blur(2px);
+    background: linear-gradient(124deg, #FF7B7B, #344284);
+    background-size: 1800% 1800%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 10s ease infinite;
+    -o-animation: rainbow 10s ease infinite;
+    animation: rainbow 10s ease infinite;
+}
+
+div.banner a span.circle {
+    height: 10px;
+    width: 10px;
+    background-color: var(--main-color);
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-moz-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-o-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+    50% {
+        background-position: 100% 19%
+    }
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+div.filters {
+    margin-top: 10%;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    /* align-items: flex-start; */
+    align-items: flex-start;
 }
 
 h1 {
@@ -54,6 +160,8 @@ header img {
 
 .container {
     margin: 20px;
+    opacity: 0;
+    animation: fadein 2s 1s forwards;
 }
 
 .container span.line {
@@ -67,12 +175,13 @@ header img {
 
 div.filters,
 div.subcontainer {
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    border-bottom: 0px solid var(--gray-color);
+}
+
+div.subcontainer {
+    padding: 15px 0 15px 0;
 }
 
 footer {
@@ -101,6 +210,9 @@ footer {
         margin-left: auto;
         margin-right: auto;
         margin-top: 32px;
+    }
+    div.subcontainer {
+        padding: 40px 0 40px 0;
     }
     header {
         margin-bottom: 192px;
