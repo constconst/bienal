@@ -179,11 +179,16 @@ div.title {
     align-items: center;
 }
 
+div.title {
+    font-size: 1.2rem;
+}
+
 div.subcontainer a.info {
     padding: 15px 0 15px 0;
     text-decoration: none;
     display: flex;
     align-items: center;
+    color: var(--text-color);
 }
 
 footer {
@@ -196,8 +201,14 @@ footer {
     overflow: hidden;
 }
 
+footer a:hover {
+    text-decoration: none;
+    color: var(--gray-color);
+}
+
 footer a {
     text-decoration: none;
+    color: var(--highlight-color);
 }
 
 footer div.links {
@@ -219,6 +230,56 @@ article.extra {
 article.extra h2 {
     font-weight: 200;
     font-size: 1.5rem;
+}
+
+
+/* posts de la pagina */
+
+div.grid-container {
+    display: inline-block;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+div.pictures,
+div.description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.pictures img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.description {
+    font-weight: 200;
+    padding: 10px;
+    font-size: 15pt;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+
+div.download {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 20pt;
+}
+
+div.download a {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+div.download a:hover {
+    color: var(--gray-color);
 }
 
 
@@ -279,13 +340,31 @@ article.extra h2 {
         height: 663px;
         overflow-y: scroll;
     }
+    div.pictures img {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+    }
     div.description {
         font-weight: 200;
         padding: 40px;
         font-size: 15pt;
         line-height: 1.5;
         text-indent: 2em;
-        text-decoration: blink;
+    }
+    div.download {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        padding: 40px;
+        font-size: 20pt;
+    }
+    div.download a {
+        text-decoration: none;
+        color: var(--highlight-color);
+    }
+    div.download a:hover {
+        color: var(--gray-color);
     }
     footer {
         font-size: 1.5rem;
