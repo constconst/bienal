@@ -173,14 +173,17 @@ header img {
 }
 
 div.filters,
-div.subcontainer {
+div.title {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 
-div.subcontainer {
+div.subcontainer a.info {
     padding: 15px 0 15px 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 footer {
@@ -244,7 +247,7 @@ article.extra h2 {
         margin-right: auto;
         margin-top: 32px;
     }
-    div.subcontainer {
+    div.subcontainer div.title {
         padding: 40px 0 40px 0;
     }
     header {
@@ -254,12 +257,35 @@ article.extra h2 {
         font-size: 60px;
         font-weight: 100;
     }
-    p.info,
+    a.info,
     p.year {
         font-size: 40px;
     }
-    p.info:hover {
+    a.info {
+        color: var(--text-color);
+    }
+    a.info:hover {
         color: var(--highlight-color);
+    }
+    /* POSTS DE LA PÁGINA */
+    div.grid-container {
+        display: inline-block;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+    div.pictures,
+    div.description {
+        height: 663px;
+        overflow-y: scroll;
+    }
+    div.description {
+        font-weight: 200;
+        padding: 40px;
+        font-size: 15pt;
+        line-height: 1.5;
+        text-indent: 2em;
+        text-decoration: blink;
     }
     footer {
         font-size: 1.5rem;
