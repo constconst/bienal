@@ -5,77 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienal de Artes Mediales de Santiago</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="page-style.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
+            <nav>
+                <img class="plusRotate" src="https://www.bienaldeartesmediales.cl/wp-content/uploads/2021/02/plus.svg" alt="más">
+            </nav>
 
-            <h1>Bienal de Artes <br> Mediales de Santiago</h1>
-            <a href="https://cchv.cl"><img src="images/cchv-logo.svg" alt="logo cchv"> </a>
-        </header>
-        <div class="filters">
-            <p class="filter-name">edición</p>
-            <p class="filter-name">año</p>
-        </div>
-        <span class=line></span>
-        <div class="subcontainer">
-            <div class="title">
-                <a href="page.html" class="info">14º El cuarto mundo
-                    <svg xmlns="http://www.w3.org/2000/svg" width="49.46" height="48.72" viewBox="0 0 49.46 48.72"><g transform="translate(0.503 18.645) rotate(-30)"><g transform="translate(0 0)"><path d="M36.205,17.324h0a.57.57,0,0,0,.042-.2h0a.57.57,0,0,0-.042-.2h0a.563.563,0,0,0-.125-.185L19.581.189a.566.566,0,0,0-.8.8L34.314,16.542H.566a.566.566,0,1,0,0,1.133H34.314L18.78,33.227a.566.566,0,1,0,.8.8l16.5-16.519A.563.563,0,0,0,36.205,17.324Z" transform="translate(0 -0.037)" fill="#f9868d" stroke="#f9868d" stroke-width="0.7"/></g></g></svg>
-                </a>
-                <p class="year">2019</p>
+            <div>
+                <h1 id="bienal"><a href="/" style="mix-blend-mode: multiply;">Bienal de Artes Mediales de Santiago</a></h1>
             </div>
-            <div class="contenido-desplegable grid-container">
-                <div class="grid-item pictures">
-                    <img src="images/AUTONOMIA-portada.jpg" alt="">
-                    <img src="images/Rectangle 31.jpg" alt="">
-                </div>
-                <div class="grid-item description">
-                    <p> La convergencia entre artes, ciencias y tecnología, entre naturaleza, ciudad, ideas, palabras y acción colectiva, conforma el campo de exploraciones de «El cuarto mundo», la 14 Bienal de Artes Mediales de Santiago. Buscamos desenvolver
-                        estrategias de adaptación y transformación ante un presente determinado por la integración de tecnologías digitales en buena parte de los procesos sociales, la infoxicación producida por la saturación mediática y la sobreexplotación
-                        de la naturaleza, hoy reducida a recursos y servicios. </p>
-                    <p> Combinando las lógicas de la intuición, la creación, la precisión, el archivo y la conexión, queremos generar instrumentos de múltiples escalas y perspectivas con los que explorar la crisis e imaginar modos de adaptación y balance
-                        para trazar el camino de vuelta a la tierra. El título y curatoría de esta nueva edición está inspirado en la escultura «El cuarto mundo» del artista chileno Carlos Ortúzar (1935-1985), una obra instalada en 1972 en el patio del
-                        edificio destinado a la UNCTAD III (actual Edificio Villavicencio), en el que arte, ciencia y sociedad convergieron con potencia. La obra se erigió como una crítica frente a la distinción entre “primer, segundo y tercer mundo”,
-                        división que separaba al mundo en diferentes clases sociales, mientras que el concepto “cuarto mundo” se acuñaba para designar a la porción más marginada del orden desarrollista. El edificio de la UNCTAD III y las obras que ahí
-                        se instalaron representaron un intento por revertir ese orden. No obstante, al igual que esta utopía la obra desapareció tras del Golpe de Estado de 46 años despúes, gracias a la participación de la familia de Ortúzar y la maestranza
-                        JEMO, encargada de su fabricación original, se ha construido una nueva versión para ser restituida en el mismo sitio como hito inaugural de la 14 Bienal.</p>
-                </div>
-                <div class="grid-item"></div>
-                <div class="grid-item download">
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18.797" height="19.855" viewBox="0 0 18.797 19.855"><g transform="translate(18.412 0.35) rotate(90)"><g transform="translate(0 0)"><path d="M19.133,9.173h0a.3.3,0,0,0,.022-.108h0a.3.3,0,0,0-.022-.108h0a.3.3,0,0,0-.066-.1L10.348.118a.3.3,0,0,0-.423.423L18.134,8.76H.3a.3.3,0,1,0,0,.6H18.134L9.925,17.577a.3.3,0,1,0,.423.423l8.72-8.73A.3.3,0,0,0,19.133,9.173Z" transform="translate(0 -0.037)" fill="none" stroke="#f9868d" stroke-width="0.7"/></g></g></svg>                        descargar catálogo</a>
-                </div>
-
-
-
-
+            <div>
+                <a href="https://cchv.cl" target="_blank"><img src="https://www.bienaldeartesmediales.cl/wp-content/uploads/2021/04/logocchv.svg" alt="logo cchv"> </a>
             </div>
         </div>
+        <nav id="hidden-nav" class="hidden">
+            <div class="nav-content">
+                <div class="horizontal-menu">
+                    <div class="pages-menu">
+                        <?php 
+                                wp_nav_menu( array(
+                                    'menu' => 'Menu lateral - páginas',
+                                ) ); 
+                            ?>
+                    </div>
+                    <div class="images-menu">
+                        <?php 
+                                wp_nav_menu( array(
+                                    'menu' => 'Menu lateral - rrss',
+                                ) ); 
+                            ?>
+                    </div>
+                </div>
+                <hr class="menu-line">
+                <div class="posts-menu">
+                    <?php query_posts(array('orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 100)); ?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <?php $id = get_the_ID(); ?>
+                    <?php $cats = get_the_category($id); ?>
+                    <a href="<?php echo get_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_query(); ?>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <span class=line></span>
-        <footer>
-            <a href="">info</a>
-            <div class="links">
-                <a href="https://cchv.cl">cchv.cl</a>
+    <main id="content" class="single">
+        <section class="color-section" style="--background-color: <?php echo get_post_meta($id, '_wpbienal_single_background_color', true); ?>; --text-color: <?php echo get_post_meta($id, '_wpbienal_single_text_color', true); ?>; --link-color: <?php echo get_post_meta($id, '_wpbienal_single_link_color', true); ?>;">
+            <div class="post-container">
+                <div class="main-image">
+                    <img src="https://www.bienaldeartesmediales.cl/wp-content/uploads/2020/01/mainPrograms.gif" alt="">
+                </div>
+                <h2>14ª - El cuarto mundo</h2>
+                <h3>2019</h3>
+                <p>
+                    La convergencia entre artes, ciencias y tecnología, entre naturaleza, ciudad, ideas, palabras y acción colectiva, conforma el campo de exploraciones de «El cuarto mundo», la 14 Bienal de Artes Mediales de Santiago. Buscamos desenvolver estrategias de
+                    adaptación y transformación ante un presente determinado por la integración de tecnologías digitales en buena parte de los procesos sociales, la infoxicación producida por la saturación mediática y la sobreexplotación de la naturaleza,
+                    hoy reducida a recursos y servicios. </p>
 
-                <a href="#">facebook</a>
-
-                <a href="#">instagram</a>
-
-
-                <a href="#">youtube</a>
+                <p>Combinando las lógicas de la intuición, la creación, la precisión, el archivo y la conexión, queremos generar instrumentos de múltiples escalas y perspectivas con los que explorar la crisis e imaginar modos de adaptación y balance para
+                    trazar el camino de vuelta a la tierra. El título y curatoría de esta nueva edición está inspirado en la escultura «El cuarto mundo» del artista chileno Carlos Ortúzar (1935-1985), una obra instalada en 1972 en el patio del edificio
+                    destinado a la UNCTAD III (actual Edificio Villavicencio), en el que arte, ciencia y sociedad convergieron con potencia.</p>
+                <p>La obra se erigió como una crítica frente a la distinción entre “primer, segundo y tercer mundo”, división que separaba al mundo en diferentes clases sociales, mientras que el concepto “cuarto mundo” se acuñaba para designar a la porción
+                    más marginada del orden desarrollista. El edificio de la UNCTAD III y las obras que ahí se instalaron representaron un intento por revertir ese orden. No obstante, al igual que esta utopía la obra desapareció tras del Golpe de Estado
+                    de 46 años despúes, gracias a la participación de la familia de Ortúzar y la maestranza JEMO, encargada de su fabricación original, se ha construido una nueva versión para ser restituida en el mismo sitio como hito inaugural de la
+                    14 Bienal.</p>
+                <hr class="divisor">
+                <h4>Catálogo</h4>
+                <img src="https://www.bienaldeartesmediales.cl/wp-content/uploads/2021/02/14-catalogo-mockup.jpg" alt="">
+                <hr class="divisor">
+                <h4>Sitio web</h4>
+                <img src="https://www.bienaldeartesmediales.cl/wp-content/uploads/2020/01/14-web.png" alt="">
+                <p>visitar sitio web</p>
+                <hr class="divisor">
+                <p>14° El Cuarto Mundo, Bienal de Artes Mediales de Santiago realizada en el año 2019, fue posible gracias a la colaboración de nuestros aliados:</p>
 
             </div>
+        </section>
 
-        </footer>
-        <article class="extra">
-            <h2>Aliados</h2>
-        </article>
-    </div>
+    </main>
+
+    <?php wp_enqueue_script('owl_carousel', get_template_directory_uri() . '/js/owl.carousel/owl.carousel.min.js', array('jquery'), FALSE, FALSE); ?>
+    <?php wp_enqueue_style('owl_carousel_style', get_template_directory_uri() . '/js/owl.carousel/assets/owl.carousel.min.css', FALSE, FALSE, FALSE); ?>
+    <?php wp_enqueue_style('owl_carousel_theme', get_template_directory_uri() . '/js/owl.carousel/assets/owl.theme.default.min.css', FALSE, FALSE, FALSE); ?>
+    <?php wp_enqueue_script('single', get_template_directory_uri() . '/js/single.js', array('jquery'), FALSE, FALSE); ?>
+    <!-- poner footer aquí -->
+    <?php get_footer('bienal'); ?>
 </body>
 
 </html>

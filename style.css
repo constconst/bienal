@@ -1,9 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
 :root {
     --main-color: #FCFCFC;
     --text-color: #050505;
     --gray-color: #BEBEBE;
     --highlight-color: #f9868d;
+}
+
+
+/*     --main-color: #181818;
+    --text-color: #f9868d;
+    --gray-color: #BEBEBE;
+    --highlight-color: #fff; */
+
+
+/* header {
+    z-index: 2;
+    position: sticky;
+    transition: 0.2s;
+    padding-top: 20px;
+    margin-bottom: 20%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+    font-size: 20px;
+} */
+
+.active {
+    z-index: 2;
+    position: sticky;
+    transition: 0.2s;
+    padding-top: 20px;
+    margin-bottom: 20%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+    font-size: 20px;
 }
 
 @keyframes colorchange {
@@ -150,6 +182,7 @@ h1 {
     font-weight: 200;
     align-self: flex-start;
     margin-top: 0;
+    font-family: 'Fraunces', serif;
 }
 
 header img {
@@ -189,6 +222,12 @@ div.subcontainer a.info {
     display: flex;
     align-items: center;
     color: var(--text-color);
+}
+
+a.info svg {
+    height: 20px;
+    width: 20px;
+    transform: translateY(2px);
 }
 
 footer {
@@ -328,6 +367,10 @@ div.download a:hover {
     a.info:hover {
         color: var(--highlight-color);
     }
+    a.info svg {
+        height: initial;
+        width: initial;
+    }
     /* POSTS DE LA PÁGINA */
     div.grid-container {
         display: inline-block;
@@ -368,5 +411,9 @@ div.download a:hover {
     }
     footer {
         font-size: 1.5rem;
+    }
+    section.logos img {
+        height: 50px;
+        width: auto;
     }
 }
